@@ -1,0 +1,321 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    transition: width 0.3s;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.sidebar-header .logo img {
+    height: 40px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul li i.menu-icon {
+    margin-right: 10px;
+}
+
+.menu-text {
+    display: inline-block;
+}
+
+.burger {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar.closed {
+    width: 60px;
+}
+
+.sidebar.closed .menu-text {
+    display: none;
+}
+
+.sidebar.closed .sidebar-header .logo {
+    display: none;
+}
+
+/* Navbar */
+.navbar {
+    color: #fff;
+    padding: 10px 20px; /* Menambahkan padding atas dan bawah */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 10px; /* Menambahkan jarak dari atas */
+    left: 250px;
+    width: calc(100% - 250px);
+    z-index: 1000;
+    transition: left 0.3s, width 0.3s;
+}
+
+.sidebar.closed ~ .main-content .navbar {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+
+.welcome-message {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+    color: #8D8D8D;
+    margin-bottom: 10px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.notification {
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.notification i {
+    color: black;
+}
+
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 200px;
+    text-align: left;
+    padding: 10px;
+}
+
+.notification-dropdown.show {
+    display: block;
+}
+
+.profile {
+    position: relative;
+    cursor: pointer;
+    color: #484848;
+}
+
+.profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 150px;
+    text-align: center;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+.profile-image-dropdown {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.profile-dropdown p {
+    margin: 10px 0;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.profile-dropdown a:hover {
+    background: #f4f4f4;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    transition: margin-left 0.3s;
+}
+
+.sidebar.closed ~ .main-content {
+    margin-left: 60px;
+}
+
+.content {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    transition: left 0.3s, width 0.3s;
+}
+
+.sidebar.closed ~ .main-content .footer {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+
+.profile-details {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-details img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.card-body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.welcome-message span {
+    font-weight: bold;
+}
+
+.notification, .profile {
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.icon-bell {
+    font-size: 24px;
+}
+
+.notification-dropdown, .profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 200px;
+    z-index: 1000;
+}
+
+.notification-dropdown p, .profile-dropdown a {
+    margin: 0;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.notification-dropdown p:hover, .profile-dropdown a:hover {
+    background-color: #f4f4f4;
+}
+
+.profile-image-dropdown {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}

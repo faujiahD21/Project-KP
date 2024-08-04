@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d3d3d3;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width:600px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 827.474px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.user-icon {
+    margin-bottom: 20px;
+    width: 138.23px;
+    height: 112.649px;
+    flex-shrink: 0;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    padding-left:11px; /* Tambahkan padding-left untuk menggeser teks ke kanan */
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.register-btn {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.upload-btn:hover, .register-btn:hover {
+    background-color: #0056b3;
+}
+
