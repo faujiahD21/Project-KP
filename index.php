@@ -1,3 +1,13 @@
+<?php
+// inisalisasi session
+session_start();
+
+//mengecek apakah ada session user yang aktif, jika tidak arahkan ke coba2.php
+if(!isset($_SESSION['user'])){
+    header('location:login.php'); //arahkan ke login.php
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,20 +17,22 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="css/layanan.css">
 
-	<title>Layanan Dinsos</title>
+	<title>Dashboard</title>
 </head>
 <body>
 
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
+		
 		<a href="index.php" class="brand">
 			<i class='logo'><img src="img/logobpupemda.png" alt="Logo"></i>
 		</a>
+
 		<ul class="side-menu top">
-			<li>
+			<li class="active">
 				<a href="index.php">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
@@ -32,7 +44,7 @@
 					<span class="text">Ajukan Rekomendasi</span>
 				</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="layanan.php">
 					<i class='bx bxs-group'></i>
 					<span class="text">Layanan</span>
@@ -40,7 +52,7 @@
 			</li>
 		</ul>
 		<ul class="side-menu">
-            <li>
+			<li>
 				<a href="profile.php">
 					<i class='bx bxs-group'></i>
 					<span class="text">Profil Saya</span>
@@ -69,7 +81,6 @@
 					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
 				</div>
 			</form>
-			<input type="checkbox" id="switch-mode" hidden>
 			<a href="#" class="notification">
 				<i class='bx bxs-bell' ></i>
 				<span class="num">8</span>
@@ -84,12 +95,19 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Layanan</h1>
+					<h1>Dashboard</h1>
 				</div>
 			</div>
 
 			<ul class="box-info">
-                <li>
+				<li>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3>Diproses</h3>
+						<p>Status Pengajuan</p>
+					</span>
+				</li>
+				<li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
 						<h3>Rekomendasi PBPUPEMDA</h3>
@@ -99,15 +117,8 @@
 				<li>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
-						<h3>Gratis</h3>
-						<p>Biaya</p>
-					</span>
-				</li>
-				<li>
-					<i class='bx bxs-calendar-check' ></i>
-					<span class="text">
-						<h3>1 Hari Jam Kerja</h3>
-						<p>Durasi Pelayanan</p>
+						<h3><a href="https://api.whatsapp.com/send/?phone=628118165165&text&type=phone_number&app_absent=0">08118165165</a></h3>
+						<p>CEK DATA BPJS</p>
 					</span>
 				</li>
 			</ul>
@@ -116,28 +127,46 @@
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
-						<h3>PERSYARATAN BERKAS  REKOMENDASI PBUPEMDA :</h3>
+						<h3>Informasi Pribadi</h3>
 					</div>
 					<table>
 						<tbody>
-                            <p>1. Screenshot Cek Data BPJS di Pandawa BPJS</p>
-                            <p>2. Foto Copy KK (Kartu Keluarga) Sebanyak 1 Lembar.</p>
-                            <p>3. Foto Copy KTP (Kartu Tanda Penduduk) Sebanyak 1 Lembar.</p>
-                            <p>4. Foto Copy Surat Keterangan Tidak Mampu (SKTM) dari Kelurahan Kemudian diketahui Kecamatan Sebanyak 1 Lembar.</p>
-						</tbody>
-					</table>
-				</div>
-                <div class="order">
-					<div class="head">
-						<h3>PERSYARATAN BERKAS  REKOMENDASI JAMKESDA :</h3>
-					</div>
-					<table>
-						<tbody>
-                            <p>1. Screenshot Cek Data BPJS di Pandawa BPJS</p>
-                            <p>2. Foto Copy KK (Kartu Keluarga) Sebanyak 1 Lembar.</p>
-                            <p>3. Foto Copy KTP (Kartu Tanda Penduduk) Sebanyak 1 Lembar.</p>
-                            <p>4. Foto Copy Surat Keterangan Tidak Mampu (SKTM) dari Kelurahan Kemudian diketahui Kecamatan Sebanyak 1 Lembar.</p>
-                            <p>5. Foto Copy Surat Keterangan Di Rawat dari Rumah Sakit / Rujukan Sebanyak 1 Lembar.</p>
+							<tr>
+								<td>
+									<p>Nama</p>
+								</td>
+								<td>: John Doe</td>
+							</tr>
+							<tr>
+								<td>
+									<p>NIK</p>
+								</td>
+								<td>: 217202210027926</td>
+							</tr>
+							<tr>
+								<td>
+									<p>No Talepon</p>
+								</td>
+								<td>: 082110068106</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Alamat</p>
+								</td>
+								<td>: Perumahan Indah Lestari Blok E No. 21, RT 001/RW. 003</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Kelurahan</p>
+								</td>
+								<td>: Air Raja</td>
+							</tr>
+							<tr>
+								<td>
+									<p>Kabupaten</p>
+								</td>
+								<td>: Tanjungpinang Timur</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -199,6 +228,7 @@
                 searchForm.classList.remove('show');
             }
         })
+
 
     </script>
 </body>
